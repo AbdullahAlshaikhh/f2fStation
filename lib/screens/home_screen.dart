@@ -346,14 +346,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             Column(
                               children: [
                                 Image.asset(
-                                  'assets/images/transfer.png',
+                                  'assets/images/advice.png',
                                   height: 40,
                                   width: 40,
                                 ),
                                 const Align(
                                   heightFactor: 1,
                                   alignment: Alignment.bottomCenter,
-                                  child: Text('Transfer'),
+                                  child: Text('Advice'),
                                 ),
                               ],
                             ),

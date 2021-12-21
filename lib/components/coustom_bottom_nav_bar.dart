@@ -1,4 +1,6 @@
 import 'package:f2f/screens/home_screen.dart';
+import 'package:f2f/screens/mylist.dart';
+import 'package:f2f/screens/promotions_screen.dart';
 import 'package:f2f/screens/wishlist_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,8 +15,8 @@ class _BottomNavigateState extends State<BottomNavigate> {
   int _selectedIndex = 0;
   final List<Widget> _pages = <Widget>[
     const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
+    const MyListScreen(),
+    const PromotionsScreen(),
     const WishlistScreen(),
   ];
 
