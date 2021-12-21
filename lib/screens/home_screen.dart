@@ -8,6 +8,8 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 
 import 'auction_screen.dart';
 import 'buy_screen.dart';
+import 'community_screen.dart';
+import 'courses_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -274,19 +276,26 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ],
                               ),
                             ),
-                            Column(
-                              children: [
-                                Image.asset(
-                                  'assets/images/courses.png',
-                                  height: 40,
-                                  width: 40,
-                                ),
-                                const Align(
-                                  heightFactor: 1,
-                                  alignment: Alignment.bottomCenter,
-                                  child: Text('Courses'),
-                                ),
-                              ],
+                            InkWell(
+                              onTap: (){
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        CoursesScreen()));
+                              },
+                              child: Column(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/courses.png',
+                                    height: 40,
+                                    width: 40,
+                                  ),
+                                  const Align(
+                                    heightFactor: 1,
+                                    alignment: Alignment.bottomCenter,
+                                    child: Text('Courses'),
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),
@@ -299,19 +308,26 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Column(
-                              children: [
-                                Image.asset(
-                                  'assets/images/community.png',
-                                  height: 40,
-                                  width: 40,
-                                ),
-                                const Align(
-                                  heightFactor: 1,
-                                  alignment: Alignment.bottomCenter,
-                                  child: Text('Community'),
-                                )
-                              ],
+                            InkWell(
+                              onTap: (){
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        CommunityScreen()));
+                              },
+                              child: Column(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/community.png',
+                                    height: 40,
+                                    width: 40,
+                                  ),
+                                  const Align(
+                                    heightFactor: 1,
+                                    alignment: Alignment.bottomCenter,
+                                    child: Text('Community'),
+                                  )
+                                ],
+                              ),
                             ),
                             Column(
                               children: [

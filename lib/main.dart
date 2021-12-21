@@ -7,7 +7,6 @@ import 'package:splash_screen_view/SplashScreenView.dart';
 import 'components/coustom_bottom_nav_bar.dart';
 
 void main() => runApp(MyApp());
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
