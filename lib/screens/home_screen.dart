@@ -4,6 +4,8 @@ import 'package:f2f/screens/sell_screen.dart';
 import 'package:f2f/screens/transfer_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 import 'auction_screen.dart';
@@ -37,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 40, left: 20, bottom: 20),
+              padding: const EdgeInsets.only(top: 20, left: 10, bottom: 20),
               child: Row(
                 children: [
                   const CircleAvatar(
@@ -60,13 +62,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Text(
                           ' Elon Mask',
                           style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
+                              fontSize: 16, fontWeight: FontWeight.bold),
                         ),
                       ),
                     ],
                   ),
                   const SizedBox(
-                    width: 75,
+                    width: 115,
                   ),
                   IconButton(
                     onPressed: () {},
@@ -86,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 5, right: 5),
+              padding: const EdgeInsets.only(left: 0, right: 0),
               child: Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
@@ -137,19 +139,19 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(
-              height: 15,
+              height: 5,
             ),
             Container(
               width: double.infinity,
               child: CarouselSlider(
                 items: const [
                   Text(
-                    'News News Test Test',
-                    style: TextStyle(color: Colors.red),
+                    '| Potato Media For Technical Solutions |',
+                    style: TextStyle(color: Colors.white, fontSize: 16,fontWeight: FontWeight.w500),
                   ),
                   Text(
-                    'News News Test Test',
-                    style: TextStyle(color: Colors.red),
+                    '| Potato Media For Technical Solutions |',
+                    style: TextStyle(color: Colors.white, fontSize: 16,fontWeight: FontWeight.w500),
                   ),
                 ],
                 options: CarouselOptions(
@@ -160,235 +162,279 @@ class _HomeScreenState extends State<HomeScreen> {
                   reverse: true,
                   height: 20,
                   autoPlay: true,
-                  autoPlayInterval: Duration(seconds: 5),
-                  autoPlayAnimationDuration: Duration(milliseconds: 1000),
+                  autoPlayInterval: const Duration(seconds: 5),
+                  autoPlayAnimationDuration: const Duration(milliseconds: 1000),
                   autoPlayCurve: Curves.easeInCubic,
                   enlargeCenterPage: true,
                   scrollDirection: Axis.horizontal,
-
                   // onPageChanged: (index, reason) {
                   //   setState(() {
                   //     _current_slider = index;
                   //   });
                   // }
                 ),
+
               ),
             ),
             const SizedBox(
               height: 15,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 5, right: 5),
+              padding: const EdgeInsets.only(left: 0, right: 0),
               child: Card(
                 color: const Color(0xFF29313C),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 14),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        SellScreen()));
-                              },
-                              child: Column(
-                                children: [
-                                  Image.asset(
-                                    'assets/images/sell.png',
-                                    height: 40,
-                                    width: 40,
-                                  ),
-                                  const Align(
-                                    heightFactor: 1,
-                                    alignment: Alignment.bottomCenter,
-                                    child: Text('Sell'),
-                                  )
-                                ],
+                  child: SizedBox(
+                    height: 150,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 14),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          SellScreen()));
+                                },
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/sell.png',
+                                      height: 30,
+                                      width: 30,
+                                    ),
+                                    const Align(
+                                      heightFactor: 1,
+                                      alignment: Alignment.bottomCenter,
+                                      child: Text(
+                                        'Sell',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        BuyScreen()));
-                              },
-                              child: Column(
-                                children: [
-                                  Image.asset(
-                                    'assets/images/buy.png',
-                                    height: 40,
-                                    width: 40,
-                                  ),
-                                  const Align(
-                                    heightFactor: 1,
-                                    alignment: Alignment.bottomCenter,
-                                    child: Text('Buy'),
-                                  )
-                                ],
+                              InkWell(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          BuyScreen()));
+                                },
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/buy.png',
+                                      height: 30,
+                                      width: 30,
+                                    ),
+                                    const Align(
+                                      heightFactor: 1,
+                                      alignment: Alignment.bottomCenter,
+                                      child: Text(
+                                        'Buy',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
-                            ),
-                            InkWell(
-                              onTap: (){
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        TransferScreen()));
-                              },
-                              child: Column(
-                                children: [
-                                  Image.asset(
-                                    'assets/images/transfer.png',
-                                    height: 40,
-                                    width: 40,
-                                  ),
-                                  const Align(
-                                    heightFactor: 1,
-                                    alignment: Alignment.bottomCenter,
-                                    child: Text('Transfer'),
-                                  ),
-                                ],
+                              InkWell(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          TransferScreen()));
+                                },
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/transfer.png',
+                                      height: 30,
+                                      width: 30,
+                                    ),
+                                    const Align(
+                                      heightFactor: 1,
+                                      alignment: Alignment.bottomCenter,
+                                      child: Text(
+                                        'Transfer',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                            InkWell(
-                              onTap: (){
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        AuctionScreen()));
-                              },
-                              child: Column(
-                                children: [
-                                  Image.asset(
-                                    'assets/images/auction.png',
-                                    height: 40,
-                                    width: 40,
-                                  ),
-                                  const Align(
-                                    heightFactor: 1,
-                                    alignment: Alignment.bottomCenter,
-                                    child: Text('Auction'),
-                                  ),
-                                ],
+                              InkWell(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          AuctionScreen()));
+                                },
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/auction.png',
+                                      height: 30,
+                                      width: 30,
+                                    ),
+                                    const Align(
+                                      heightFactor: 1,
+                                      alignment: Alignment.bottomCenter,
+                                      child: Text(
+                                        'Auction',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                            InkWell(
-                              onTap: (){
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        CoursesScreen()));
-                              },
-                              child: Column(
-                                children: [
-                                  Image.asset(
-                                    'assets/images/courses.png',
-                                    height: 40,
-                                    width: 40,
-                                  ),
-                                  const Align(
-                                    heightFactor: 1,
-                                    alignment: Alignment.bottomCenter,
-                                    child: Text('Courses'),
-                                  ),
-                                ],
+                              InkWell(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          CoursesScreen()));
+                                },
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/courses.png',
+                                      height: 30,
+                                      width: 30,
+                                    ),
+                                    const Align(
+                                      heightFactor: 1,
+                                      alignment: Alignment.bottomCenter,
+                                      child: Text(
+                                        'Courses',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 18,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 8),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            InkWell(
-                              onTap: (){
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        CommunityScreen()));
-                              },
-                              child: Column(
+                        const SizedBox(
+                          height: 25,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 4),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          CommunityScreen()));
+                                },
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/community.png',
+                                      height: 30,
+                                      width: 30,
+                                    ),
+                                    const Align(
+                                      heightFactor: 1,
+                                      alignment: Alignment.bottomCenter,
+                                      child: Text(
+                                        'Comm',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              Column(
                                 children: [
                                   Image.asset(
-                                    'assets/images/community.png',
-                                    height: 40,
-                                    width: 40,
+                                    'assets/images/news.png',
+                                    height: 30,
+                                    width: 30,
                                   ),
                                   const Align(
                                     heightFactor: 1,
                                     alignment: Alignment.bottomCenter,
-                                    child: Text('Community'),
+                                    child: Text(
+                                      'News',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w600),
+                                    ),
                                   )
                                 ],
                               ),
-                            ),
-                            Column(
-                              children: [
-                                Image.asset(
-                                  'assets/images/news.png',
-                                  height: 40,
-                                  width: 40,
-                                ),
-                                const Align(
-                                  heightFactor: 1,
-                                  alignment: Alignment.bottomCenter,
-                                  child: Text('News'),
-                                )
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Image.asset(
-                                  'assets/images/advice.png',
-                                  height: 40,
-                                  width: 40,
-                                ),
-                                const Align(
-                                  heightFactor: 1,
-                                  alignment: Alignment.bottomCenter,
-                                  child: Text('Advice'),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Image.asset(
-                                  'assets/images/coins.png',
-                                  height: 40,
-                                  width: 40,
-                                ),
-                                const Align(
-                                  heightFactor: 1,
-                                  alignment: Alignment.bottomCenter,
-                                  child: Text('Coins'),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Image.asset(
-                                  'assets/images/videos.png',
-                                  height: 40,
-                                  width: 40,
-                                ),
-                                const Align(
-                                  heightFactor: 1,
-                                  alignment: Alignment.bottomCenter,
-                                  child: Text('Videos'),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
+                              Column(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/advice.png',
+                                    height: 30,
+                                    width: 30,
+                                  ),
+                                  const Align(
+                                    heightFactor: 1,
+                                    alignment: Alignment.bottomCenter,
+                                    child: Text(
+                                      'Advice',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/coins.png',
+                                    height: 30,
+                                    width: 30,
+                                  ),
+                                  const Align(
+                                    heightFactor: 1,
+                                    alignment: Alignment.bottomCenter,
+                                    child: Text(
+                                      'Coins',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/videos.png',
+                                    height: 30,
+                                    width: 30,
+                                  ),
+                                  const Align(
+                                    heightFactor: 1,
+                                    alignment: Alignment.bottomCenter,
+                                    child: Text(
+                                      'Videos',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -396,7 +442,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               children: [
                 SizedBox(
-                  height: 120,
+                  height: 150,
                   width: 200,
                   child: Card(
                     color: const Color(0xFF29313C),
@@ -405,6 +451,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -433,7 +480,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 120,
+                  height: 150,
                   width: 190,
                   child: Card(
                     color: const Color(0xFF29313C),
@@ -442,6 +489,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -503,7 +551,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 '4 hours ago',
                                 style: TextStyle(
                                     fontSize: 14,
-                                    fontWeight: FontWeight.normal,
+                                    fontWeight: FontWeight.w600,
                                     color: Colors.white60),
                               ),
                             )
@@ -516,7 +564,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Row(
                         children: const [
                           Text(
-                              "This is just test text for posting This is just\nThis is just test text for posting\nThis is just test text for posting This is just\nThis is just test text for posting This is just just test\nThis is just test text for posting This is just\n\nThis is just test text for posting\njust test text."),
+                            "This is just test text for posting This is just\nThis is just test text for posting\nThis is just test text for posting This is just\nThis is just test text for posting This is just just test\nThis is just test text for posting This is just\n\nThis is just test text for posting\njust test text.",
+                            style: TextStyle(fontWeight: FontWeight.w600),
+                          ),
                         ],
                       ),
                     )
@@ -547,7 +597,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Text(
                               'Yaser alnabhan',
                               style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
+                                  fontSize: 18, fontWeight: FontWeight.w600),
                             ),
                             Align(
                               heightFactor: 0.9,
@@ -556,7 +606,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 'yesterday 11:21 PM',
                                 style: TextStyle(
                                     fontSize: 14,
-                                    fontWeight: FontWeight.normal,
+                                    fontWeight: FontWeight.w600,
                                     color: Colors.white60),
                               ),
                             )
@@ -569,7 +619,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Row(
                         children: const [
                           Text(
-                              "This is just test text for posting This is just.\n"),
+                            "This is just test text for posting This is just.\n",
+                            style: TextStyle(fontWeight: FontWeight.w600),
+                          ),
                         ],
                       ),
                     ),
@@ -621,7 +673,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 'yesterday 06:01 AM',
                                 style: TextStyle(
                                     fontSize: 14,
-                                    fontWeight: FontWeight.normal,
+                                    fontWeight: FontWeight.w600,
                                     color: Colors.white60),
                               ),
                             )
@@ -634,7 +686,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Row(
                         children: const [
                           Text(
-                              "This is just test text for posting This is just.\n"),
+                            "This is just test text for posting This is just.\n",
+                            style: TextStyle(fontWeight: FontWeight.w600),
+                          ),
                         ],
                       ),
                     ),
